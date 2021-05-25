@@ -1,0 +1,31 @@
+html {
+	box-sizing: border-box;
+}
+
+*,
+*::after,
+*::before {
+	box-sizing: inherit;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	margin: 0;
+}
+
+body {
+	min-width: 320px;
+	overflow-x: hidden;
+	font-family: "", "Arial", "sans-serif";
+	/* 	font-weight: ;
+	font-size: ;
+	line-height: ; */
+}
+
+.container {
+	padding: 0 20px;
+}
