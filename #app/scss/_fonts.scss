@@ -1,8 +1,56 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400&family=Roboto+Condensed:wght@300;400&display=swap");
+
 /* @font-face {
-	font-family: "Roboto-Light";
+	font-family: "Roboto Condensed", sans-serif;
 	font-weight: 300;
 	font-style: normal;
 	src: url("../fonts/Roboto-Light.woff2") format("woff2"), url("../fonts/Roboto-Light.woff") format("woff");
 } */
 
+/* icoMoon start */
+@font-face {
+	font-family: "icomoon";
+	src: url("../fonts/icomoon.eot?d5wa9e");
+	src: url("../fonts/icomoon.eot?d5wa9e#iefix") format("embedded-opentype"),
+		url("../fonts/icomoon.ttf?d5wa9e") format("truetype"), url("fonts/icomoon.woff?d5wa9e") format("woff"),
+		url("../fonts/icomoon.svg?d5wa9e#icomoon") format("svg");
+	font-weight: normal;
+	font-style: normal;
+	font-display: block;
+}
 
+[class^="icon-"],
+[class*=" icon-"] {
+	/* use !important to prevent issues with browser extensions that change fonts */
+	font-family: "icomoon" !important;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.icon-facebook:before {
+	color: $main-color;
+	content: "\f09a";
+}
+.icon-facebook-f:before {
+	content: "\f09a";
+}
+.icon-linkedin:before {
+	color: $main-color;
+	content: "\f0e1";
+}
+.icon-paper-plane-o:before {
+	color: $main-color;
+	content: "\f1d9";
+}
+.icon-send-o:before {
+	content: "\f1d9";
+}
+
+/* icoMoon end */

@@ -1,5 +1,276 @@
 @import "vars";
 @import "libs";
 @import "fonts";
-
+@import "global";
 @import "media";
+
+/* ---------------------------------------------------------------------  320  --------------------------------------------------------------------- */
+@media (min-width: 320px) {
+	.wrapper {
+		height: 100%;
+		margin: 0 auto;
+		border-radius: 5px;
+		overflow: hidden;
+
+		display: flex;
+		flex-direction: column;
+	}
+	/* --- header --- */
+	.header {
+		margin-bottom: 5px;
+
+		&__inner {
+			overflow: hidden;
+			display: flex;
+			justify-content: flex-end;
+		}
+	}
+
+	.nav li a {
+		color: #533557;
+	}
+	.nav {
+		margin: 14px 7px;
+		display: flex;
+		align-items: center;
+
+		&__menu {
+			margin-right: 46px;
+		}
+		&__menu li {
+			display: none;
+		}
+
+		&__menu li + li {
+			margin-left: 46px;
+		}
+
+		/* burger start */
+		&__burger {
+			width: 26px;
+			height: 26px;
+			padding: 2px;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+			cursor: pointer;
+			transition: transform 330ms ease-out;
+		}
+
+		&__burger.open {
+			transform: rotate(-45deg);
+		}
+	}
+
+	.menu .menu__item {
+		color: $main-color;
+	}
+
+	.line-menu {
+		background-color: #c4dfe6;
+		border-radius: 3px;
+		width: 100%;
+		height: 4px;
+	}
+
+	.line-menu.half {
+		width: 45%;
+	}
+
+	.line-menu.start {
+		transition: transform 330ms cubic-bezier(0.54, -0.81, 0.57, 0.57);
+		transform-origin: right;
+	}
+
+	.open .line-menu.start {
+		transform: rotate(-90deg) translateX(3px);
+	}
+
+	.line-menu.end {
+		align-self: flex-end;
+		transition: transform 330ms cubic-bezier(0.54, -0.81, 0.57, 0.57);
+		transform-origin: left;
+	}
+
+	.open .line-menu.end {
+		transform: rotate(-90deg) translateX(-3px);
+	}
+	/* burger end */
+
+	/* --- header --- */
+	/* --- content --- */
+	.content {
+		&____inner {
+			position: relative;
+		}
+
+		&__box {
+			width: 300px;
+			padding: 4px;
+			position: absolute;
+			top: 20%;
+			right: 6%;
+		}
+
+		&__img {
+			height: 250px;
+			width: 250px;
+			opacity: 0.7;
+			margin-bottom: 27px;
+			margin-right: 45px;
+			border-radius: 7px;
+			background-position: 7% 2%;
+			background-size: cover;
+			background-repeat: no-repeat;
+			position: relative;
+		}
+
+		&__img::before {
+			content: "Dmytro Makarov";
+
+			font-family: "Nunito Sans", sans-serif;
+			font-size: 27px;
+			line-height: 30px;
+			font-weight: normal;
+
+			position: absolute;
+			top: 116px;
+			right: -134px;
+			z-index: 5;
+			transform: rotate(90deg);
+			letter-spacing: 3px;
+		}
+		&__summery {
+			font-size: 16px;
+			line-height: 19px;
+		}
+	}
+	/* --- content --- */
+
+	/* social */
+	.social {
+		position: absolute;
+		bottom: -3px;
+		left: 26px;
+
+		ul {
+			padding-inline-start: 0px;
+		}
+
+		&__inner li {
+			display: inline-block;
+			padding: 0;
+			list-style: none;
+			text-align: center;
+			& + li {
+				margin-left: 7px;
+			}
+		}
+	}
+	/* social */
+}
+/* ---------------------------------------------------------------------  320  --------------------------------------------------------------------- */
+
+/* ---------------------------------------------------------------------  768  --------------------------------------------------------------------- */
+@media (min-width: 768px) {
+	/* --- content --- */
+	.content {
+		&__img {
+			margin-bottom: 12px;
+		}
+		&__box {
+			min-height: 360px;
+			width: 390px;
+			top: 25%;
+			right: 16%;
+		}
+		&__img::before {
+			font-size: 30px;
+			line-height: 103px;
+			bottom: 0;
+			right: -134px;
+			transform: rotate(0deg);
+		}
+		&__summery {
+			font-size: 21px;
+			line-height: 27px;
+			position: absolute;
+			bottom: -20px;
+			left: -161px;
+		}
+	}
+	/* --- content --- */
+}
+/* ---------------------------------------------------------------------  768  --------------------------------------------------------------------- */
+
+/* ---------------------------------------------------------------------  1400  --------------------------------------------------------------------- */
+@media (min-width: 1400px) {
+	.wrapper {
+		min-height: 70%;
+		max-width: 80%;
+	}
+	.nav li {
+		display: inline-block;
+	}
+	.nav__burger {
+		display: none;
+	}
+
+	/* --- content --- */
+	.content {
+		min-height: calc(100vh - 155px);
+		min-width: 900px;
+		padding: 7px;
+		border-radius: 7px;
+		box-shadow: inset -9px 7px 20px $main-color;
+
+		&__box {
+			min-height: 440px;
+			top: 25%;
+			right: 18%;
+		}
+
+		&__img {
+			height: 300px;
+			width: 300px;
+			margin-bottom: 7px;
+			border-radius: 7px;
+			background-position: 7% 2%;
+			background-size: cover;
+			background-repeat: no-repeat;
+			position: relative;
+		}
+
+		&__img::before {
+			content: "Dmytro Makarov";
+			font-family: "Nunito Sans", sans-serif;
+			font-size: 32px;
+		}
+		&__summery {
+			font-size: 24px;
+		}
+	}
+	/* --- content --- */
+
+	/* social */
+	.social {
+		bottom: 7px;
+		left: 37px;
+
+		ul {
+			padding-inline-start: 0px;
+		}
+
+		&__inner li {
+			display: inline-block;
+			padding: 0;
+			list-style: none;
+			text-align: center;
+			& + li {
+				margin-top: 7px;
+			}
+		}
+	}
+	/* social */
+}
+/* ---------------------------------------------------------------------  1400  --------------------------------------------------------------------- */
