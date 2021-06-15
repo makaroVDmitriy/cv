@@ -14,6 +14,7 @@
 
 		display: flex;
 		flex-direction: column;
+		position: relative;
 	}
 	/* --- header --- */
 	.header {
@@ -23,6 +24,7 @@
 			overflow: hidden;
 			display: flex;
 			justify-content: flex-end;
+			margin-right: 0;
 		}
 	}
 
@@ -49,7 +51,7 @@
 		&__burger {
 			width: 26px;
 			height: 26px;
-			padding: 2px;
+			
 			display: flex;
 			flex-direction: column;
 			justify-content: space-between;
@@ -63,6 +65,7 @@
 	}
 
 	.menu .menu__item {
+		
 		color: $main-color;
 	}
 
@@ -83,7 +86,7 @@
 	}
 
 	.open .line-menu.start {
-		transform: rotate(-90deg) translateX(3px);
+		transform: rotate(-90deg) translateX(4px);
 	}
 
 	.line-menu.end {
@@ -93,58 +96,65 @@
 	}
 
 	.open .line-menu.end {
-		transform: rotate(-90deg) translateX(-3px);
+		transform: rotate(-90deg) translateX(-4px);
 	}
 	/* burger end */
 
 	/* --- header --- */
 	/* --- content --- */
 	.content {
-		&____inner {
-			position: relative;
+		
+		&__inner {
+			min-height: 500px;
+			font-size: 16px;
+			line-height: 1.4em;
+			
+			display: flex;
+			justify-content: space-around;
+			align-items: center;
+			flex-wrap: wrap;
 		}
 
-		&__box {
-			width: 300px;
-			padding: 4px;
-			position: absolute;
-			top: 20%;
-			right: 6%;
-		}
 
-		&__img {
-			height: 250px;
-			width: 250px;
+		&__link img{
+			max-width: 240px;
+			height: auto;
+			display: inline-block;
+			margin: 0 auto;
+			border: 0;
+			border-radius: 5px;
 			opacity: 0.7;
-			margin-bottom: 27px;
-			margin-right: 45px;
-			border-radius: 7px;
-			background-position: 7% 2%;
+			background-position: center;
 			background-size: cover;
 			background-repeat: no-repeat;
-			position: relative;
+
+
 		}
 
-		&__img::before {
-			content: "Dmytro Makarov";
-
-			font-family: "Nunito Sans", sans-serif;
-			font-size: 27px;
-			line-height: 30px;
-			font-weight: normal;
-
-			position: absolute;
-			top: 116px;
-			right: -134px;
-			z-index: 5;
-			transform: rotate(90deg);
-			letter-spacing: 3px;
+		&__info {
+			max-width: 400px;
+			padding: 0 10px 15px 15px;
+			
 		}
-		&__summery {
-			font-size: 16px;
-			line-height: 19px;
+
+		&__info ul{
+			padding: 0;
 		}
-	}
+
+		&__info span{
+			padding-left: 27px;
+		}
+
+		&__info a{
+			color: $main-color;
+			text-decoration: none;
+		}
+
+}
+.summery{
+	text-align: center;
+}
+
 	/* --- content --- */
 
 	/* social */
@@ -174,29 +184,9 @@
 /* ---------------------------------------------------------------------  768  --------------------------------------------------------------------- */
 @media (min-width: 768px) {
 	/* --- content --- */
-	.content {
-		&__img {
-			margin-bottom: 12px;
-		}
-		&__box {
-			min-height: 360px;
-			width: 390px;
-			top: 25%;
-			right: 16%;
-		}
-		&__img::before {
-			font-size: 30px;
-			line-height: 103px;
-			bottom: 0;
-			right: -134px;
-			transform: rotate(0deg);
-		}
-		&__summery {
-			font-size: 21px;
-			line-height: 27px;
-			position: absolute;
-			bottom: -20px;
-			left: -161px;
+	.content{
+		&__info{
+			padding: 0 ;
 		}
 	}
 	/* --- content --- */
@@ -218,38 +208,31 @@
 
 	/* --- content --- */
 	.content {
-		min-height: calc(100vh - 155px);
-		min-width: 900px;
-		padding: 7px;
+		box-shadow: inset -1em 1em 20px -7px #7c9490;
 		border-radius: 7px;
-		box-shadow: inset -9px 7px 20px $main-color;
-
-		&__box {
-			min-height: 440px;
-			top: 25%;
-			right: 18%;
+		padding: 7px;
+		&__inner {
+			min-height: calc(100vh - 180px);
+			font-size: 21px;
+		
 		}
 
-		&__img {
-			height: 300px;
-			width: 300px;
-			margin-bottom: 7px;
-			border-radius: 7px;
-			background-position: 7% 2%;
-			background-size: cover;
-			background-repeat: no-repeat;
-			position: relative;
+		&__link{
+			cursor: pointer;
+		}
+		&__link img{
+			max-width: 340px;
+
 		}
 
-		&__img::before {
-			content: "Dmytro Makarov";
-			font-family: "Nunito Sans", sans-serif;
-			font-size: 32px;
+		&__info {
+
+			max-width: 730px;
+			padding: 0 10px 10px 15px;
+
 		}
-		&__summery {
-			font-size: 24px;
-		}
-	}
+
+}
 	/* --- content --- */
 
 	/* social */
@@ -273,4 +256,5 @@
 	}
 	/* social */
 }
+
 /* ---------------------------------------------------------------------  1400  --------------------------------------------------------------------- */
