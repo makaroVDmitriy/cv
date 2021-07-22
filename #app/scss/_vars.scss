@@ -1,1 +1,13 @@
 $main-color: #c4dfe6;
+
+/* mixin for responsive fonts */
+
+$maxWidth: 1440;
+
+@mixin responsive-font($pcSize, $mobSize) {
+ $addSize: $pcSize - $mobSize;
+ $maxWidth: $maxWidth - 320;
+ font-size: calc(#{$mobSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth}));
+}
+
+/* mixin for responsive fonts */
